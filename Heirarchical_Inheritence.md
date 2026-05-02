@@ -31,6 +31,58 @@ To write a Python program that uses **Hierarchical Inheritance** to input and di
 5. Display collected information using class methods.
 
 ## Program
-Add code here
+```
+class Details:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def getName(self):
+        return self.name
+
+    def getAge(self):
+        return self.age
+
+class Employee(Details):
+    def __init__(self, name, age, employee_id, department):
+        super().__init__(name, age)
+        self.employee_id = employee_id
+        self.department = department
+
+    def getEmployeeDetails(self):
+        print(f"Employee ID: {self.employee_id}, Department: {self.department}")
+
+class Patient(Details):
+    def __init__(self, name, age, patient_id, disease):
+        super().__init__(name, age)
+        self.patient_id = patient_id
+        self.disease = disease
+
+    def getPatientDetails(self):
+        print(f"Patient ID: {self.patient_id}, Disease: {self.disease}")
+
+e_name = input()
+e_age = int(input())
+e_id = input()
+e_dept = input()
+
+p_name = input()
+p_age = int(input())
+p_id = input()
+p_disease = input()
+
+emp = Employee(e_name, e_age, e_id, e_dept)
+pat = Patient(p_name, p_age, p_id, p_disease)
+
+print(f"Name: {emp.getName()}, Age: {emp.getAge()}")
+emp.getEmployeeDetails()
+
+print(f"Name: {pat.getName()}, Age: {pat.getAge()}")
+pat.getPatientDetails()
+```
 ## Sample Output
+<img width="841" height="702" alt="image" src="https://github.com/user-attachments/assets/4790d53a-7f19-454b-a839-e8c6dd8138e8" />
+
+## Result
+Thus, The Python program that uses Hierarchical Inheritance to input and display Employee and Patient details was executed successfully.
 
